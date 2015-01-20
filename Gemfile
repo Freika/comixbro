@@ -15,8 +15,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'guard-rspec', require: false
-end
-
-group :development, :test do
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
 end
