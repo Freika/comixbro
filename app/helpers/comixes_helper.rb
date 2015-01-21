@@ -1,0 +1,2 @@
+module ComixesHelper
+end

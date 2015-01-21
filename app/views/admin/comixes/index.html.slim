@@ -1,0 +1,19 @@
+h1 Comixes
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @comixes.each do |comix|
+      tr
+        td = link_to comix.title, admin_comix_path(comix)
+        td = link_to 'Edit', edit_admin_comix_path(comix)
+        td = link_to 'Destroy', comix, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Comix', new_admin_comix_path

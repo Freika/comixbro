@@ -1,0 +1,7 @@
+h1 Publishers
+= link_to '[New Publisher]', new_admin_publisher_path
+ul
+- @publishers.each do |publisher|
+  li
+    => link_to publisher.name, admin_publisher_path(publisher)
+    => link_to '[Edit]', edit_admin_publisher_path(publisher)

@@ -1,0 +1,8 @@
+= simple_form_for [:admin, @comix] do |f|
+  = f.input :title
+  = f.input :year
+  = f.input :language
+  = f.select :publisher, collecton: Publisher.all
+  = f.input :genres, as: :grouped_select
+
+  = f.submit 'Save'
