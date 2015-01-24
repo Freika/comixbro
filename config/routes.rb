@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :comixes
     resources :publishers
     resources :genres
+    resources :pages
   end
 end

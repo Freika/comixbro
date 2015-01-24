@@ -1,8 +1,15 @@
-= simple_form_for [:admin, @comix] do |f|
-  = f.input :title
-  = f.input :year
-  = f.input :language
-  = f.select :publisher, collecton: Publisher.all
-  = f.input :genres, as: :grouped_select
+= simple_form_for [:admin, @comix], html: { multipart: true } do |f|
+  .col-sm-10
+    = f.input :title
+    = f.input :publisher_id, collection: Publisher.all.map { |p| [p.name, p.id] }, label: 'Publisher'
+    = f.input :year
+    = f.input :language
+  .col-sm-2
+    =f.collection_check_boxes :genre_ids, Genre.all, :id, :title, item_wrapper_class: 'checkbox'
+  .col-sm-12
+    = f.simple_fields_for :pages do |p|
+      = p.input :page, input_html: { multiple: true, name: 'pages[page][]' }, as: :file, label: 'Pages'
+    - @comix.pages.each do |p|
+      = image_tag p.page_url, style: "width: 200px; height: 300px"
 
-  = f.submit 'Save'
+    p= f.button :submit, label: 'Save comix', class: 'btn btn-primary'

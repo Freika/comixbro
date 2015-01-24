@@ -13,10 +13,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'simple_form'
+gem 'carrierwave'
 
 group :development, :test do
-  gem 'byebug'
   gem 'web-console', '~> 2.0'
+  gem 'launchy'
+  gem 'capybara'
   gem 'spring'
   gem 'guard-rspec', require: false
   gem 'factory_girl_rails'

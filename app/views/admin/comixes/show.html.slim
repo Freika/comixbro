@@ -1,4 +1,8 @@
 p#notice = notice
 
+h2= @comix.title
+div= link_to 'Edit', edit_admin_comix_path(@comix)
 
-= link_to 'Edit', edit_admin_comix_path(@comix)
+- @pages.each do |p|
+  = image_tag p.page_url, :style => "width: 200px; height: 300px;"
+

@@ -7,6 +7,7 @@ html
     = csrf_meta_tags
   body
     .container
-      nav.mainmenu= render "nav"
+      .col-sm-3
+        nav.mainmenu= render "nav"
 
     .container= yield

@@ -1,0 +1,9 @@
+= simple_form_for(@page) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :comix_id
+    = f.input :address
+
+  .form-actions
+    = f.button :submit
