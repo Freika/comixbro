@@ -18,13 +18,7 @@ describe 'Comix', type: feature do
     end
 
     click_on 'Create Comix'
-    p page.body
-save_and_open_page
     expect(page).to have_content('Deadpool')
-
-    # comix = Comix.last
-
-    # expect(comix.title).to eq('Deadpool')
   end
 
 end
