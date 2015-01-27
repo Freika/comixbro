@@ -2,9 +2,10 @@ h2= @comix.title
 .publisher= @comix.publisher.name
 .year= @comix.year
 .language= @comix.language
-.pages= "#{@comix.pages.count} страниц"
+.pages= "#{@pages.total_pages} страниц"
 
 .text-center
- = image_tag @comix.pages[@current_page_id].page_url
+  - if @pages.current_page < @pages.total_pages
+    = link_to(image_tag(@comix.pages[@current_page_id].page_url), "#{comix_path(@comix)}?page=#{@pages.current_page+1}")
 
- = will_paginate @pages
+  = will_paginate @pages
