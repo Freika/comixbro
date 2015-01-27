@@ -1,13 +1,6 @@
-h1 Listing comixes
-
-table
-  thead
-    tr
-      th
-      th
-      th
-
-  tbody
-    - @comixes.each do |comix|
-      tr
-        td = link_to comix.title, comix
+h1 Comixes
+- @comixes.each do |comix|
+  .comix
+    h3= link_to comix.title, comix
+    br
+    = image_tag comix.pages.first.page_url, size: '200x300'

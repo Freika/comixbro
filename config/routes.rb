@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :comixes, only: [:index, :show]
+  resources :comixes, only: [:index, :show] do
+    resources :pages, only: :show
+  end
   root 'comixes#index'
 
   namespace :admin do

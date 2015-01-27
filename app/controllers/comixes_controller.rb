@@ -6,6 +6,8 @@ class ComixesController < ApplicationController
   end
 
   def show
+    @pages = @comix.pages.paginate(:page => params[:page], :per_page => 1)
+    @current_page_id = params[:page].to_i
   end
 
   def new

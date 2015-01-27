@@ -1,6 +1,10 @@
-p#notice = notice
+h2= @comix.title
+.publisher= @comix.publisher.name
+.year= @comix.year
+.language= @comix.language
+.pages= "#{@comix.pages.count} страниц"
 
+.text-center
+ = image_tag @comix.pages[@current_page_id].page_url
 
-= link_to 'Edit', edit_comix_path(@comix)
-'|
-= link_to 'Back', comixes_path
+ = will_paginate @pages

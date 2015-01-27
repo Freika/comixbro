@@ -14,6 +14,7 @@ gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'will_paginate', '~> 3.0.6'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
