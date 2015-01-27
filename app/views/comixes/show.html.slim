@@ -6,6 +6,8 @@ h2= @comix.title
 
 .text-center
   - if @pages.current_page < @pages.total_pages
-    = link_to(image_tag(@comix.pages[@current_page_id].page_url), "#{comix_path(@comix)}?page=#{@pages.current_page+1}")
+    = link_to(image_tag(@current_page), "#{comix_path(@comix)}?page=#{@pages.current_page+1}")
+  - else
+    = image_tag @current_page
 
   = will_paginate @pages

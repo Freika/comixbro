@@ -7,7 +7,8 @@ class ComixesController < ApplicationController
 
   def show
     @pages = @comix.pages.paginate(:page => params[:page], :per_page => 1)
-    @current_page_id = params[:page].to_i
+    current_page_id = params[:page] ? params[:page].to_i : 1
+    @current_page = @comix.pages[current_page_id - 1].page_url
   end
 
   def new
